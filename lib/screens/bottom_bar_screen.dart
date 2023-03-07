@@ -15,10 +15,10 @@ class BottomBarScreen extends StatefulWidget {
 }
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
-  int selectedIndex = 1;
+  int selectedIndex = 0;
   List<Widget> pages = [
     const HomePage(),
-    const Categorycreen(),
+    Categorycreen(),
     const CartScreen(),
     const UserScreen()
   ];
