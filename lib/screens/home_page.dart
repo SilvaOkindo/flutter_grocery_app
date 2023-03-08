@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app/providers/theme_provider.dart';
+import 'package:grocery_app/screens/inner_screen.dart/onsale_screen.dart';
+import 'package:grocery_app/screens/inner_screen.dart/product_screen.dart';
+import 'package:grocery_app/services/global_methods.dart';
 import 'package:grocery_app/services/utils.dart';
 import 'package:grocery_app/widgets/feed_widget.dart';
 import 'package:grocery_app/widgets/on_sale_widget.dart';
@@ -32,8 +35,8 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
         body: SingleChildScrollView(
-          child: Column(
-              children: [
+      child: Column(
+        children: [
           SizedBox(
             height: size.height * 0.33,
             child: Swiper(
@@ -60,7 +63,12 @@ class _HomePageState extends State<HomePage> {
             height: 10.h,
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              GlobalMethods.navigateTo(
+                context: context,
+                routeName: OnSaleScreen.routeName,
+              );
+            },
             child: TextWidget(
               text: "View all",
               color: Colors.blue,
@@ -101,11 +109,8 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          SizedBox(
-            height: 10.h,
-          ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -115,7 +120,12 @@ class _HomePageState extends State<HomePage> {
                   fontSize: 22.sp,
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    GlobalMethods.navigateTo(
+                      context: context,
+                      routeName: ProductScreen.routeName,
+                    );
+                  },
                   child: TextWidget(
                     text: "Browser all",
                     color: Colors.blue,
@@ -125,22 +135,20 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          SizedBox(
-            height: 10.h,
-          ),
           GridView.count(
             crossAxisCount: 2,
+            physics: const BouncingScrollPhysics(),
             padding: EdgeInsets.zero,
             childAspectRatio: size.width / (size.height * 0.55),
-            crossAxisSpacing: 10.h,
+            //crossAxisSpacing: 10.h,
             mainAxisSpacing: 10.h,
             shrinkWrap: true,
             children: List.generate(6, (index) {
               return const FeedWidget();
             }),
           )
-              ],
-            ),
-        ));
+        ],
+      ),
+    ));
   }
 }

@@ -29,7 +29,7 @@ class _OnSaleWidgetState extends State<OnSaleWidget> {
           borderRadius: BorderRadius.circular(12.w),
           onTap: () {},
           child: Padding(
-            padding: EdgeInsets.all(8.w),
+            padding: const EdgeInsets.all(8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -38,8 +38,8 @@ class _OnSaleWidgetState extends State<OnSaleWidget> {
                   children: [
                     Image.asset(
                       'assets/images/cat/Spinach.png',
-                      width: size.width * 0.22,
-                      height: size.width * 0.22,
+                      width: size.width * 0.20,
+                      height: size.width * 0.18,
                       fit: BoxFit.fill,
                     ),
                     Column(
@@ -47,11 +47,11 @@ class _OnSaleWidgetState extends State<OnSaleWidget> {
                         TextWidget(
                           text: '1KG',
                           color: color,
-                          fontSize: 22.sp,
+                          fontSize: 20,
                           isTitle: true,
                         ),
-                        SizedBox(
-                          height: 5.h,
+                        const SizedBox(
+                          height: 5,
                         ),
                         Row(
                           children: [
@@ -77,12 +77,12 @@ class _OnSaleWidgetState extends State<OnSaleWidget> {
                     )
                   ],
                 ),
-                SizedBox(
-                  height: 8.h,
+                const SizedBox(
+                  height: 8,
                 ),
                 const PriceWidget(),
-                SizedBox(
-                  height: 8.h,
+                const SizedBox(
+                  height: 8,
                 ),
                 TextWidget(
                   text: "Product name",

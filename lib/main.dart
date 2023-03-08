@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app/providers/theme_provider.dart';
 import 'package:grocery_app/screens/bottom_bar_screen.dart';
+import 'package:grocery_app/screens/inner_screen.dart/onsale_screen.dart';
+import 'package:grocery_app/screens/inner_screen.dart/product_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'const/theme_data.dart';
@@ -47,8 +49,13 @@ class _MyAppState extends State<MyApp> {
               title: 'Flutter Demo',
               debugShowCheckedModeBanner: false,
               theme: Style.themeData(themeProvider.getTheme, context),
-              home: const BottomBarScreen() //Colors.blueGrey,
-              ,
+              home: const BottomBarScreen(),
+              routes: {
+                OnSaleScreen.routeName:(context) => const OnSaleScreen(),
+                ProductScreen.routeName:(context) => const ProductScreen()
+              },
+              //Colors.blueGrey,
+              
             );
           }
         ),

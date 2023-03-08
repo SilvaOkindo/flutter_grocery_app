@@ -48,7 +48,7 @@ class _FeedWidgetState extends State<FeedWidget> {
               Center(
                 child: Image.asset(
                   'assets/images/cat/fruits.png',
-                  height: size.width * 0.22,
+                  height: size.width * 0.15,
                   width: size.width * 0.22,
                   fit: BoxFit.fill,
                 ),
@@ -78,7 +78,7 @@ class _FeedWidgetState extends State<FeedWidget> {
                 children: [
                   const PriceWidget(),
                   SizedBox(
-                    width: 8.w,
+                    width: 8,
                   ),
                   Flexible(
                     child: Row(
@@ -92,7 +92,7 @@ class _FeedWidgetState extends State<FeedWidget> {
                           ),
                         ),
                         SizedBox(
-                          width: 5.w,
+                          width: 5,
                         ),
                         Flexible(
                             child: TextFormField(
@@ -114,8 +114,8 @@ class _FeedWidgetState extends State<FeedWidget> {
                 child: TextButton(
                   onPressed: () {},
                   style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Theme.of(context).cardColor),
+                      backgroundColor: MaterialStateProperty.all(
+                          Theme.of(context).cardColor),
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         const RoundedRectangleBorder(
